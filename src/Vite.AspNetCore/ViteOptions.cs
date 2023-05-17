@@ -1,5 +1,6 @@
 ﻿// Copyright (c) 2023 Quetzal Rivera.
 // Licensed under the MIT License, See LICENCE in the project root for license information.
+using Microsoft.AspNetCore.Hosting;
 
 namespace Vite.AspNetCore;
 
@@ -14,6 +15,11 @@ public record ViteOptions
 	/// The manifest file name. Default is "manifest.json".
 	/// </summary>
 	public string Manifest { get; init; } = "manifest.json";
+	
+	/// <summary>
+	/// The manifest file name. Default is "manifest.json".
+	/// </summary>
+	public string ManifestDirectory { get; init; } = "";
 
 	/// <summary>
 	/// The name of the package manager to use. Default value is "npm".

@@ -46,8 +46,11 @@ public sealed class ViteManifest : IViteManifest
 		// Read tha name of the manifest file from the configuration.
 		var manifest = viteOptions.Manifest;
 
+		// Read manifest directory
+		var manifestDirectory = viteOptions.ManifestDirectory;
+
 		// Get the manifest.json file path
-		var manifestPath = Path.Combine(environment.WebRootPath, manifest);
+		var manifestPath = Path.Combine(string.IsNullOrEmpty(manifestDirectory) ? environment.WebRootPath : manifestDirectory, manifest);
 
 		// If the manifest.json file exists, deserialize it into a dictionary.
 		if (File.Exists(manifestPath))
